@@ -7,7 +7,11 @@ const path = require("node:path")
 
 
 //Creates the client instance
-const client = new Client({intents: [GatewayIntentBits.Guilds]})
+const client = new Client({intents: [
+	GatewayIntentBits.Guilds, 
+	GatewayIntentBits.GuildMessages,
+	GatewayIntentBits.GuildMessageReactions
+]})
 client.commands = new Collection();
 
 //Loading commands
