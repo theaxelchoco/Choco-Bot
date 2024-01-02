@@ -9,16 +9,15 @@ module.exports = {
     
     async execute(interaction) {
         let Query;
-        const result = await fetch("https://1000randomnames.com");
+        const result = await fetch("https://random-data-api.com/api/v2/users");
         Query = await result.json();
     
-        if (!Query.results) {
+        if (!Query) {
             console.log("Couldn't retrieve data");
-            await interaction.reply({ content: "Failed to access trivia database. Try again later" });
+            await interaction.reply({ content: "Failed to access database. Try again later" });
             return;
         }
 
-        console.log(Query);
-
+        await interaction.reply({content: "Your generated username is "+ Query.username})
     }
 }

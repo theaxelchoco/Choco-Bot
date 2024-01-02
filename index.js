@@ -10,7 +10,8 @@ const path = require("node:path")
 const client = new Client({intents: [
 	GatewayIntentBits.Guilds, 
 	GatewayIntentBits.GuildMessages,
-	GatewayIntentBits.GuildMessageReactions
+	GatewayIntentBits.GuildMessageReactions,
+	GatewayIntentBits.MessageContent
 ]})
 client.commands = new Collection();
 
