@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/theaxelchoco/Discord-Bot#readme",
   "dependencies": {
+    "@google-cloud/translate": "^8.0.3",
     "discord.js": "^14.8.0",
     "dotenv": "^16.0.3",
     "he": "^1.2.0",
