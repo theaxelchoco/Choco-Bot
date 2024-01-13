@@ -23,25 +23,26 @@ module.exports = {
         .addStringOption(option =>
 			option.setName('message')
 				.setDescription('The message to be translated.')
-				.setRequired(true)),
-        /*
+				.setRequired(true))
         .addStringOption(option =>
             option.setName('language')
                 .setDescription('The language to be translated to.')
-                .setRequired(true))
+                .setRequired(true)
                 .addChoices(
-                    {name: "fe"}
-                ),
-        */
+                    {name: "French", value: "fr"},
+                    {name: "Yoruba", value: "yo"},
+                    {name: "Spanish", value: "es"},
+                    {name: "Japanese", value: "ja"},
+                    {name: "Russian", value: "ru"},
+                )),
     
     async execute(interaction) {
         const InputText = interaction.options.getString('message' , true)
-        const Language = "fr" // interaction.options.getString('language', true)
-        console.log(InputText)
+        const Language =  interaction.options.getString('language', true) 
 
         TranslateText(InputText, Language)
-            .then(Translation => {
-                interaction.reply({content: Translation})
+            .then(async Translation => {
+                await interaction.reply({content: Translation})
             } )
     }
 }
